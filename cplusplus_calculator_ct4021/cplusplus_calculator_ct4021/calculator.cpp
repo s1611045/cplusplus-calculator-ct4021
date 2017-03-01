@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include <string>
+#include <cctype>
 #include <stack>
+#include <cstdlib>
 #include <vector>
 #include <iostream>
 #include "calculator.h"
@@ -24,10 +26,12 @@ std::stack<char> calculator::convertToPostfix()
 	//Checking input string character by character
 	for (int i = 0; i<calculator::inputCalculation.length(); i++)
 	{	
-		if (isdigit(calculator::inputCalculation.at(i))6)
+		if (isdigit(calculator::inputCalculation.at(i)))
 		{
 			//If character is a digit, add to postfix stack
 			std::cout << "added digit to postfix stack" << std::endl;
+			char buffer[12];
+			char digit = sprintf(buffer, "%d", calculator::inputCalculation.at(i));
 			postfixStack.push(calculator::inputCalculation.at(i));
 		}
 		else

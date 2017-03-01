@@ -28,7 +28,7 @@ std::stack<char> calculator::convertToPostfix()
 	{	
 		if (isdigit(calculator::inputCalculation.at(i)))
 		{
-			//If character is a digit, add to postfix stack
+			//If character is a digit, convert to char, add to postfix stack
 			std::cout << "added digit to postfix stack" << std::endl;
 			char buffer[12];
 			char digit = sprintf(buffer, "%d", calculator::inputCalculation.at(i));
@@ -40,16 +40,14 @@ std::stack<char> calculator::convertToPostfix()
 			if (opStack.empty())
 			{
 				opStack.push(calculator::inputCalculation.at(i));
-				break;
 			}
 			//If character is not a digit and operator stack is not empty...
 			else
 			{
 				//...and the operator has a HIGHER BODMAS precedence than operator at top of the operator stack, push the character to the operator stack
-				if ((opStack.top() == '*' || opStack.top() == '/') && (calculator::inputCalculation.at(i) == '+' || calculator::inputCalculation.at(i) == '-'))
+				if ((opStack.top() == '-' || opStack.top() == '+') && (calculator::inputCalculation.at(i) == '*' || calculator::inputCalculation.at(i) == '/'))
 				{
 					opStack.push(calculator::inputCalculation.at(i));
-					break;
 				}
 				//...and the operator has a LOWER BODMAS precedence than operator at top of the operator stack, push the character at the top of the operator
 				//stack to the postfix stack and pop the character at the top of the operator stack until the string character has a higher precedence than
@@ -62,7 +60,6 @@ std::stack<char> calculator::convertToPostfix()
 						opStack.pop();
 					}
 					opStack.push(calculator::inputCalculation.at(i));
-					break;
 				}
 			}
 		}

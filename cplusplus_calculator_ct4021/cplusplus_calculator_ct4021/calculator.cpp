@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include <string>
-#include <cctype>
 #include <stack>
 #include <cstdlib>
 #include <vector>

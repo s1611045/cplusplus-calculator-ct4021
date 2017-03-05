@@ -1,8 +1,7 @@
 // cplusplus_calculator_ct4021.cpp : Defines the entry point for the console application.
 
-//Including appropriate libraries
+//Including appropriate libraries and headers
 #include "stdafx.h"
-#include <stdio.h>
 #include <iostream>
 #include <string>
 #include <stack>

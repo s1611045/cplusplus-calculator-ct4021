@@ -64,48 +64,49 @@ std::stack<char> calculator::convertToPostfix()
 		}
 	}
 
-	//////////////////////////////////////////////////////////////////////
-	////////////////////////PRINTING STACKS///////////////////////////////
-	//////////////////////////////////////////////////////////////////////
-	std::stack<char> tStack1 = postfixStack;
-	std::stack<char> tStack2 = opStack;
+	////////////////////////////////////////////////////////////////////////
+	//////////////////////////PRINTING STACKS///////////////////////////////
+	////////////////////////////////////////////////////////////////////////
+	//std::stack<char> tStack1 = postfixStack;
+	//std::stack<char> tStack2 = opStack;
 
-	std::cout << std::endl << "Postfix stack:" << std::endl;
-	while (tStack1.empty() == false)
-	{
-		std::cout << tStack1.top();
-		tStack1.pop();
-	}
-	std::cout << std::endl << "Op stack" << std::endl;
-	while (tStack2.empty() == false)
-	{
-		std::cout << tStack2.top();
-		tStack2.pop();
-	}
-	//////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////
+	//std::cout << std::endl << "Postfix stack:" << std::endl;
+	//while (tStack1.empty() == false)
+	//{
+	//	std::cout << tStack1.top();
+	//	tStack1.pop();
+	//}
+	//std::cout << std::endl << "Op stack" << std::endl;
+	//while (tStack2.empty() == false)
+	//{
+	//	std::cout << tStack2.top();
+	//	tStack2.pop();
+	//}
+	////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////
 
 	//Converting postfix stacks and operator stacks to calculation stack
 			
 	//Adding postfix stack to calculation stack (reversing its order)
+	std::stack<char> tempStack;
 	while (postfixStack.empty() == false)
 	{
-		calculationStack.push(postfixStack.top());
+		tempStack.push(postfixStack.top());
 		postfixStack.pop();
 	}
-	//Adding opstack to calculation stack (mantaining its order)
-	std::stack<char> tempStack;
 
-	while (opStack.empty() == false)
-	{
-		tempStack.push(opStack.top());
-		opStack.pop();
-	}
 	while (tempStack.empty() == false)
 	{
 		calculationStack.push(tempStack.top());
 		tempStack.pop();
+	}
+
+	//Adding opstack to calculation stack (mantaining its order)
+	while (opStack.empty() == false)
+	{
+		calculationStack.push(opStack.top());
+		opStack.pop();
 	}
 
 	//Returning calculation stack

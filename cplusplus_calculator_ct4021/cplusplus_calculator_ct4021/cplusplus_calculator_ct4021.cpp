@@ -6,6 +6,7 @@
 #include <string>
 #include <stack>
 #include "calculator.h"
+#include "CalcForm.h"
 
 
 int main()

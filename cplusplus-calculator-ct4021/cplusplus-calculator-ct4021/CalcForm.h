@@ -96,7 +96,7 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->MaxLength = 16;
 			this->calcTextbox->Multiline = true;
 			this->calcTextbox->Name = L"calcTextbox";
-			this->calcTextbox->Size = System::Drawing::Size(365, 50);
+			this->calcTextbox->Size = System::Drawing::Size(360, 50);
 			this->calcTextbox->TabIndex = 0;
 			// 
 			// ins1Button

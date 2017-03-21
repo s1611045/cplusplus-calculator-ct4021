@@ -229,7 +229,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insPlusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insPlusButton->Location = System::Drawing::Point(234, 69);
+			this->insPlusButton->Location = System::Drawing::Point(229, 69);
 			this->insPlusButton->Name = L"insPlusButton";
 			this->insPlusButton->Size = System::Drawing::Size(75, 50);
 			this->insPlusButton->TabIndex = 12;
@@ -240,7 +240,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMinusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMinusButton->Location = System::Drawing::Point(234, 142);
+			this->insMinusButton->Location = System::Drawing::Point(229, 142);
 			this->insMinusButton->Name = L"insMinusButton";
 			this->insMinusButton->Size = System::Drawing::Size(75, 50);
 			this->insMinusButton->TabIndex = 13;
@@ -251,7 +251,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMultiplyButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMultiplyButton->Location = System::Drawing::Point(234, 215);
+			this->insMultiplyButton->Location = System::Drawing::Point(229, 215);
 			this->insMultiplyButton->Name = L"insMultiplyButton";
 			this->insMultiplyButton->Size = System::Drawing::Size(75, 50);
 			this->insMultiplyButton->TabIndex = 14;
@@ -262,7 +262,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insDivideButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insDivideButton->Location = System::Drawing::Point(234, 287);
+			this->insDivideButton->Location = System::Drawing::Point(229, 287);
 			this->insDivideButton->Name = L"insDivideButton";
 			this->insDivideButton->Size = System::Drawing::Size(75, 50);
 			this->insDivideButton->TabIndex = 15;

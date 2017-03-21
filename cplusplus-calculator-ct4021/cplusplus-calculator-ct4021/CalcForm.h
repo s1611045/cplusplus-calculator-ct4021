@@ -35,6 +35,44 @@ namespace cpluspluscalculatorct4021 {
 			}
 		}
 
+		void disableNumButtons()
+		{
+			this->ins0Button->Enabled = false;
+			this->ins1Button->Enabled = false;
+			this->ins2Button->Enabled = false;
+			this->ins3Button->Enabled = false;
+			this->ins4Button->Enabled = false;
+			this->ins5Button->Enabled = false;
+			this->ins6Button->Enabled = false;
+			this->ins7Button->Enabled = false;
+			this->ins8Button->Enabled = false;
+			this->ins9Button->Enabled = false;
+
+			this->insPlusButton->Enabled = true;
+			this->insMinusButton->Enabled = true;
+			this->insMultiplyButton->Enabled = true;
+			this->insDivideButton->Enabled = true;
+		}
+
+		void disableSymbolButtons()
+		{
+			this->ins0Button->Enabled = true;
+			this->ins1Button->Enabled = true;
+			this->ins2Button->Enabled = true;
+			this->ins3Button->Enabled = true;
+			this->ins4Button->Enabled = true;
+			this->ins5Button->Enabled = true;
+			this->ins6Button->Enabled = true;
+			this->ins7Button->Enabled = true;
+			this->ins8Button->Enabled = true;
+			this->ins9Button->Enabled = true;
+
+			this->insPlusButton->Enabled = false;
+			this->insMinusButton->Enabled = false;
+			this->insMultiplyButton->Enabled = false;
+			this->insDivideButton->Enabled = false;
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -356,6 +394,7 @@ namespace cpluspluscalculatorct4021 {
 		if (checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "1";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -366,6 +405,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "2";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -376,6 +416,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "3";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -386,6 +427,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "4";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -396,6 +438,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "5";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -406,6 +449,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "6";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -416,6 +460,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "7";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -426,6 +471,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "8";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -436,6 +482,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "9";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -446,6 +493,7 @@ namespace cpluspluscalculatorct4021 {
 		if(this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "0";
+			this->disableNumButtons();
 		}
 		else
 		{}
@@ -456,6 +504,7 @@ namespace cpluspluscalculatorct4021 {
 		if(this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "+";
+			this->disableSymbolButtons();
 		}
 		else
 		{}
@@ -466,6 +515,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "-";
+			this->disableSymbolButtons();
 		}
 		else
 		{}
@@ -476,6 +526,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "*";
+			this->disableSymbolButtons();
 		}
 		else
 		{}
@@ -486,6 +537,7 @@ namespace cpluspluscalculatorct4021 {
 		if (this->checkTextLength())
 		{
 			this->calcTextbox->Text = this->calcTextbox->Text + "/";
+			this->disableSymbolButtons();
 		}
 		else
 		{}

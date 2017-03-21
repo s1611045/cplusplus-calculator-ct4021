@@ -99,21 +99,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CalcForm.cpp" />
+    <ClCompile Include="cplusplus_calculator_ct4021\CalcForm.cpp" />
     <ClCompile Include="cplusplus_calculator_ct4021\calculator.cpp" />
     <ClCompile Include="cplusplus_calculator_ct4021\cplusplus_calculator_ct4021.cpp" />
     <ClCompile Include="cplusplus_calculator_ct4021\stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CalcForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="cplusplus_calculator_ct4021\CalcForm.h" />
     <ClInclude Include="cplusplus_calculator_ct4021\calculator.h" />
     <ClInclude Include="cplusplus_calculator_ct4021\stdafx.h" />
     <ClInclude Include="cplusplus_calculator_ct4021\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CalcForm.resx" />
+    <EmbeddedResource Include="cplusplus_calculator_ct4021\CalcForm.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

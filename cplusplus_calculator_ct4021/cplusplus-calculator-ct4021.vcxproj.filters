@@ -24,8 +24,8 @@
     <ClCompile Include="cplusplus_calculator_ct4021\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CalcForm.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="cplusplus_calculator_ct4021\CalcForm.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,12 +38,12 @@
     <ClInclude Include="cplusplus_calculator_ct4021\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CalcForm.h">
+    <ClInclude Include="cplusplus_calculator_ct4021\CalcForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CalcForm.resx">
+    <EmbeddedResource Include="cplusplus_calculator_ct4021\CalcForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

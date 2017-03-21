@@ -300,6 +300,7 @@ namespace cpluspluscalculatorct4021 {
 			this->backspaceButton->TabIndex = 16;
 			this->backspaceButton->Text = L"←";
 			this->backspaceButton->UseVisualStyleBackColor = true;
+			this->backspaceButton->Click += gcnew System::EventHandler(this, &CalcForm::backspaceButton_Click);
 			// 
 			// clearButton
 			// 
@@ -311,6 +312,7 @@ namespace cpluspluscalculatorct4021 {
 			this->clearButton->TabIndex = 17;
 			this->clearButton->Text = L"C";
 			this->clearButton->UseVisualStyleBackColor = true;
+			this->clearButton->Click += gcnew System::EventHandler(this, &CalcForm::clearButton_Click);
 			// 
 			// CalcForm
 			// 
@@ -487,6 +489,15 @@ namespace cpluspluscalculatorct4021 {
 		}
 		else
 		{}
+	}
+	private: System::Void clearButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		this->calcTextbox->Text = "";
+	}
+
+	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
 	}
 };
 

@@ -267,6 +267,7 @@ namespace cpluspluscalculatorct4021 {
 			this->equalsButton->TabIndex = 10;
 			this->equalsButton->Text = L"=";
 			this->equalsButton->UseVisualStyleBackColor = true;
+			this->equalsButton->Click += gcnew System::EventHandler(this, &CalcForm::equalsButton_Click);
 			// 
 			// ins0Button
 			// 
@@ -550,6 +551,15 @@ namespace cpluspluscalculatorct4021 {
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
+	}
+
+	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (this->calcTextbox->Text->EndsWith("+") || this->calcTextbox->Text->EndsWith("-") || this->calcTextbox->Text->EndsWith("/") || this->calcTextbox->Text->EndsWith("*"))
+		{
+			Windows::Forms::MessageBox symbolErrorMessage;
+			symbolErrorMessage.Show("The calculation input must end with a number (not an operator).");
+		}
 	}
 };
 

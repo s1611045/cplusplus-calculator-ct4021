@@ -23,6 +23,18 @@ namespace cpluspluscalculatorct4021 {
 			//
 		}
 
+		bool checkTextLength()
+		{
+			if(this->calcTextbox->Text->Length < 16)
+			{
+				return true;
+			} 
+			else
+			{
+				return false;
+			}
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -330,7 +342,12 @@ namespace cpluspluscalculatorct4021 {
 
 	private: System::Void Ins1Button_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		this->calcTextbox->Text = this->calcTextbox->Text + "1";
+		if (checkTextLength())
+		{
+			this->calcTextbox->Text = this->calcTextbox->Text + "1";
+		}
+		else
+		{}
 	}
 
 	private: System::Void Ins2Button_Click(System::Object^  sender, System::EventArgs^  e)

@@ -111,3 +111,17 @@ std::stack<char> calculator::convertToPostfix()
 	//Returning calculation stack
 	return calculationStack;
 }
+
+std::string calculator::calculate()
+{
+	std::stack<char> tempStack;
+	
+	while (calculationStack.empty() == false)
+	{
+		tempStack.push(calculationStack.top());
+		calculationStack.pop();
+	}
+
+
+	return std::string();
+}

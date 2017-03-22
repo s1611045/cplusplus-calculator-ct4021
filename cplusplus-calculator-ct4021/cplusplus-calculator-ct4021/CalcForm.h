@@ -557,8 +557,7 @@ namespace cpluspluscalculatorct4021 {
 	{
 		if (this->calcTextbox->Text->EndsWith("+") || this->calcTextbox->Text->EndsWith("-") || this->calcTextbox->Text->EndsWith("/") || this->calcTextbox->Text->EndsWith("*"))
 		{
-			Windows::Forms::MessageBox symbolErrorMessage;
-			symbolErrorMessage.Show("The calculation input must end with a number (not an operator).");
+			MessageBox::Show("The calculation input must end with a number, not an operator.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 };

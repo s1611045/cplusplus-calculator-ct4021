@@ -52,7 +52,7 @@ std::stack<char> calculator::convertToPostfix()
 				//the character at the top of the operator stack
 				else
 				{
-					while (opStack.top() == '*' || opStack.top() == '/')
+					while (opStack.empty() == false)
 					{
 						postfixStack.push(opStack.top());
 						opStack.pop();

@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include "calculator.h"
-
+#include <stdio.h>
 
 calculator::calculator()
 {

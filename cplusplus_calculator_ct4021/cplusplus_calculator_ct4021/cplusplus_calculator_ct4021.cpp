@@ -33,7 +33,10 @@ int main()
 		tempStack.pop();
 	}
 
+	//Calculating user input
+	std::cout << std::endl << std::endl << "The result is:" << std::endl;
+	std::cout << calc.calculate();
+
 	std::cin.get();
     return 0;
 }
-

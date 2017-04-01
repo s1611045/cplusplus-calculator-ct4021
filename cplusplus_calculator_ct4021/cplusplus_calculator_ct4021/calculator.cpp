@@ -126,6 +126,8 @@ int calculator::convertToInteger(std::string a)
 	char buffer[256];
 	a.copy(buffer, a.size(), 0);
 	i = atoi(buffer);
+	//Flushing buffer after use
+	std::fill(std::begin(buffer), std::end(buffer), NULL);
 	return i;
 }
 

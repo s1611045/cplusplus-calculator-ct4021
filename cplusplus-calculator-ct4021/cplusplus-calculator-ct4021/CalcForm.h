@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "CalculatorLogic.h"
 
 namespace cpluspluscalculatorct4021 {
 

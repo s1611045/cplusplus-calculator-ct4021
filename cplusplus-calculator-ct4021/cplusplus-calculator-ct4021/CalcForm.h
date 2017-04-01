@@ -563,6 +563,7 @@ namespace cpluspluscalculatorct4021 {
 			MessageBox::Show("The calculation input must end with a number, not an operator.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
+		//Instantiating calculator logic class
 		calculator calc;
 		//Converting system string to std::string
 		calc.inputCalculation = msclr::interop::marshal_as<std::string>(this->calcTextbox->Text);

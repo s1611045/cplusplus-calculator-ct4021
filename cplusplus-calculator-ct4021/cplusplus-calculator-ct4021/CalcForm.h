@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "CalculatorLogic.h"
+#include <msclr\marshal_cppstd.h>
 
 namespace cpluspluscalculatorct4021 {
 
@@ -556,10 +557,19 @@ namespace cpluspluscalculatorct4021 {
 
 	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+		//Checking user input for errors
 		if (this->calcTextbox->Text->EndsWith("+") || this->calcTextbox->Text->EndsWith("-") || this->calcTextbox->Text->EndsWith("/") || this->calcTextbox->Text->EndsWith("*"))
 		{
 			MessageBox::Show("The calculation input must end with a number, not an operator.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
+
+		calculator calc;
+		//Converting system string to std::string
+		calc.inputCalculation = msclr::interop::marshal_as<std::string>(this->calcTextbox->Text);
+		calc.calculationStack = calc.convertToPostfix();
+		std::string result = calc.calculate();
+		//Converting std::string back to system string and displaying result
+		this->calcTextbox->Text = gcnew String(result.c_str);
 	}
 };
 

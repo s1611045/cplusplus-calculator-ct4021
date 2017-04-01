@@ -26,14 +26,17 @@ int main()
 	//Printing converted user input
 	std::cout << std::endl << "This is converted to (in reverse order): " << std::endl;
 	
-	std::stack<char> tempStack = calc.calculationStack;
+	std::stack<std::string> tempStack = calc.calculationStack;
 	while (tempStack.empty() == false)
 	{
 		std::cout << tempStack.top();
 		tempStack.pop();
 	}
 
+	//Calculating user input
+	std::cout << std::endl << std::endl << "The result is: " << std::endl;
+	std::cout << calc.calculate();
+
 	std::cin.get();
     return 0;
 }
-

@@ -552,7 +552,12 @@ namespace cpluspluscalculatorct4021 {
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
+		if (this->calcTextbox->Text != "")
+		{
+			this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
+		}
+		else
+		{}
 	}
 
 	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e)
@@ -570,7 +575,8 @@ namespace cpluspluscalculatorct4021 {
 		calc.calculationStack = calc.convertToPostfix();
 		std::string result = calc.calculate();
 		//Converting std::string back to system string and displaying result
-		this->calcTextbox->Text = gcnew String(result.c_str);
+		String^ sysResult = gcnew String(result.c_str());
+		this->calcTextbox->Text = sysResult;
 	}
 };
 

@@ -75,6 +75,25 @@ namespace cpluspluscalculatorct4021 {
 			this->insDivideButton->Enabled = false;
 		}
 
+		void enableAllButtons()
+		{
+			this->ins0Button->Enabled = true;
+			this->ins1Button->Enabled = true;
+			this->ins2Button->Enabled = true;
+			this->ins3Button->Enabled = true;
+			this->ins4Button->Enabled = true;
+			this->ins5Button->Enabled = true;
+			this->ins6Button->Enabled = true;
+			this->ins7Button->Enabled = true;
+			this->ins8Button->Enabled = true;
+			this->ins9Button->Enabled = true;
+
+			this->insPlusButton->Enabled = true;
+			this->insMinusButton->Enabled = true;
+			this->insMultiplyButton->Enabled = true;
+			this->insDivideButton->Enabled = true;
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -548,6 +567,7 @@ namespace cpluspluscalculatorct4021 {
 	private: System::Void clearButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		this->calcTextbox->Text = "";
+		this->enableAllButtons();
 	}
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)

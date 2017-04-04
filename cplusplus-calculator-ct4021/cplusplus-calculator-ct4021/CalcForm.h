@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "CalculatorLogic.h"
 #include <msclr\marshal_cppstd.h>
+#include <regex>
 
 namespace cpluspluscalculatorct4021 {
 
@@ -31,6 +32,23 @@ namespace cpluspluscalculatorct4021 {
 			{
 				return true;
 			} 
+			else
+			{
+				return false;
+			}
+		}
+
+		bool checkTypedInput()
+		{
+			char finalInputChar = this->calcTextbox->Text[this->calcTextbox->Text->LastIndexOf];
+			if (isdigit(int(finalInputChar)))
+			{
+				return true;
+			}
+			else if (finalInputChar == '+' || finalInputChar == '-' || finalInputChar == '*' || finalInputChar == '/')
+			{
+				return true;
+			}
 			else
 			{
 				return false;
@@ -169,6 +187,7 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->Name = L"calcTextbox";
 			this->calcTextbox->Size = System::Drawing::Size(360, 50);
 			this->calcTextbox->TabIndex = 0;
+			this->calcTextbox->TextChanged += gcnew System::EventHandler(this, &CalcForm::calcTextbox_TextChanged);
 			// 
 			// ins1Button
 			// 
@@ -597,6 +616,12 @@ namespace cpluspluscalculatorct4021 {
 		//Converting std::string back to system string and displaying result
 		String^ sysResult = gcnew String(result.c_str());
 		this->calcTextbox->Text = sysResult;
+	}
+
+	private: System::Void calcTextbox_TextChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		//Further reading for keypress eventhandler https://msdn.microsoft.com/en-us/library/system.windows.forms.keypresseventhandler(v=vs.110).aspx
+		//Checking user input is valid
 	}
 };
 

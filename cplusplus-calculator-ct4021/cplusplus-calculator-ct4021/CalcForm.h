@@ -179,13 +179,13 @@ namespace cpluspluscalculatorct4021 {
 			// calcTextbox
 			// 
 			this->calcTextbox->CharacterCasing = System::Windows::Forms::CharacterCasing::Upper;
-			this->calcTextbox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->calcTextbox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->calcTextbox->Location = System::Drawing::Point(12, 12);
 			this->calcTextbox->MaxLength = 16;
 			this->calcTextbox->Multiline = true;
 			this->calcTextbox->Name = L"calcTextbox";
-			this->calcTextbox->Size = System::Drawing::Size(360, 50);
+			this->calcTextbox->Size = System::Drawing::Size(295, 50);
 			this->calcTextbox->TabIndex = 0;
 			this->calcTextbox->TextChanged += gcnew System::EventHandler(this, &CalcForm::calcTextbox_TextChanged);
 			// 
@@ -205,7 +205,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins2Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins2Button->Location = System::Drawing::Point(84, 78);
+			this->ins2Button->Location = System::Drawing::Point(68, 78);
 			this->ins2Button->Name = L"ins2Button";
 			this->ins2Button->Size = System::Drawing::Size(50, 50);
 			this->ins2Button->TabIndex = 2;
@@ -217,7 +217,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins3Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins3Button->Location = System::Drawing::Point(156, 78);
+			this->ins3Button->Location = System::Drawing::Point(124, 78);
 			this->ins3Button->Name = L"ins3Button";
 			this->ins3Button->Size = System::Drawing::Size(50, 50);
 			this->ins3Button->TabIndex = 3;
@@ -229,7 +229,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins6Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins6Button->Location = System::Drawing::Point(156, 151);
+			this->ins6Button->Location = System::Drawing::Point(124, 134);
 			this->ins6Button->Name = L"ins6Button";
 			this->ins6Button->Size = System::Drawing::Size(50, 50);
 			this->ins6Button->TabIndex = 6;
@@ -241,7 +241,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins5Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins5Button->Location = System::Drawing::Point(84, 151);
+			this->ins5Button->Location = System::Drawing::Point(68, 134);
 			this->ins5Button->Name = L"ins5Button";
 			this->ins5Button->Size = System::Drawing::Size(50, 50);
 			this->ins5Button->TabIndex = 5;
@@ -253,7 +253,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins4Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins4Button->Location = System::Drawing::Point(12, 151);
+			this->ins4Button->Location = System::Drawing::Point(12, 134);
 			this->ins4Button->Name = L"ins4Button";
 			this->ins4Button->Size = System::Drawing::Size(50, 50);
 			this->ins4Button->TabIndex = 4;
@@ -265,7 +265,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins9Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins9Button->Location = System::Drawing::Point(156, 224);
+			this->ins9Button->Location = System::Drawing::Point(124, 190);
 			this->ins9Button->Name = L"ins9Button";
 			this->ins9Button->Size = System::Drawing::Size(50, 50);
 			this->ins9Button->TabIndex = 9;
@@ -277,7 +277,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins8Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins8Button->Location = System::Drawing::Point(84, 224);
+			this->ins8Button->Location = System::Drawing::Point(68, 190);
 			this->ins8Button->Name = L"ins8Button";
 			this->ins8Button->Size = System::Drawing::Size(50, 50);
 			this->ins8Button->TabIndex = 8;
@@ -289,7 +289,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins7Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins7Button->Location = System::Drawing::Point(12, 224);
+			this->ins7Button->Location = System::Drawing::Point(12, 190);
 			this->ins7Button->Name = L"ins7Button";
 			this->ins7Button->Size = System::Drawing::Size(50, 50);
 			this->ins7Button->TabIndex = 7;
@@ -301,9 +301,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->equalsButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->equalsButton->Location = System::Drawing::Point(84, 296);
+			this->equalsButton->Location = System::Drawing::Point(68, 246);
 			this->equalsButton->Name = L"equalsButton";
-			this->equalsButton->Size = System::Drawing::Size(122, 50);
+			this->equalsButton->Size = System::Drawing::Size(106, 50);
 			this->equalsButton->TabIndex = 10;
 			this->equalsButton->Text = L"=";
 			this->equalsButton->UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins0Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins0Button->Location = System::Drawing::Point(12, 296);
+			this->ins0Button->Location = System::Drawing::Point(12, 246);
 			this->ins0Button->Name = L"ins0Button";
 			this->ins0Button->Size = System::Drawing::Size(50, 50);
 			this->ins0Button->TabIndex = 11;
@@ -325,9 +325,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insPlusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insPlusButton->Location = System::Drawing::Point(229, 78);
+			this->insPlusButton->Location = System::Drawing::Point(195, 78);
 			this->insPlusButton->Name = L"insPlusButton";
-			this->insPlusButton->Size = System::Drawing::Size(75, 50);
+			this->insPlusButton->Size = System::Drawing::Size(56, 50);
 			this->insPlusButton->TabIndex = 12;
 			this->insPlusButton->Text = L"+";
 			this->insPlusButton->UseVisualStyleBackColor = true;
@@ -337,9 +337,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMinusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMinusButton->Location = System::Drawing::Point(229, 151);
+			this->insMinusButton->Location = System::Drawing::Point(195, 134);
 			this->insMinusButton->Name = L"insMinusButton";
-			this->insMinusButton->Size = System::Drawing::Size(75, 50);
+			this->insMinusButton->Size = System::Drawing::Size(56, 50);
 			this->insMinusButton->TabIndex = 13;
 			this->insMinusButton->Text = L"-";
 			this->insMinusButton->UseVisualStyleBackColor = true;
@@ -349,9 +349,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMultiplyButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMultiplyButton->Location = System::Drawing::Point(229, 224);
+			this->insMultiplyButton->Location = System::Drawing::Point(195, 190);
 			this->insMultiplyButton->Name = L"insMultiplyButton";
-			this->insMultiplyButton->Size = System::Drawing::Size(75, 50);
+			this->insMultiplyButton->Size = System::Drawing::Size(56, 50);
 			this->insMultiplyButton->TabIndex = 14;
 			this->insMultiplyButton->Text = L"x";
 			this->insMultiplyButton->UseVisualStyleBackColor = true;
@@ -361,9 +361,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insDivideButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insDivideButton->Location = System::Drawing::Point(229, 296);
+			this->insDivideButton->Location = System::Drawing::Point(195, 246);
 			this->insDivideButton->Name = L"insDivideButton";
-			this->insDivideButton->Size = System::Drawing::Size(75, 50);
+			this->insDivideButton->Size = System::Drawing::Size(56, 50);
 			this->insDivideButton->TabIndex = 15;
 			this->insDivideButton->Text = L"÷";
 			this->insDivideButton->UseVisualStyleBackColor = true;
@@ -373,9 +373,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->backspaceButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->backspaceButton->Location = System::Drawing::Point(326, 224);
+			this->backspaceButton->Location = System::Drawing::Point(257, 190);
 			this->backspaceButton->Name = L"backspaceButton";
-			this->backspaceButton->Size = System::Drawing::Size(50, 122);
+			this->backspaceButton->Size = System::Drawing::Size(50, 106);
 			this->backspaceButton->TabIndex = 16;
 			this->backspaceButton->Text = L"←";
 			this->backspaceButton->UseVisualStyleBackColor = true;
@@ -385,9 +385,9 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->clearButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->clearButton->Location = System::Drawing::Point(326, 78);
+			this->clearButton->Location = System::Drawing::Point(257, 78);
 			this->clearButton->Name = L"clearButton";
-			this->clearButton->Size = System::Drawing::Size(50, 123);
+			this->clearButton->Size = System::Drawing::Size(50, 106);
 			this->clearButton->TabIndex = 17;
 			this->clearButton->Text = L"C";
 			this->clearButton->UseVisualStyleBackColor = true;
@@ -397,7 +397,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(384, 362);
+			this->ClientSize = System::Drawing::Size(320, 308);
 			this->Controls->Add(this->clearButton);
 			this->Controls->Add(this->backspaceButton);
 			this->Controls->Add(this->insDivideButton);

@@ -185,6 +185,7 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->MaxLength = 16;
 			this->calcTextbox->Multiline = true;
 			this->calcTextbox->Name = L"calcTextbox";
+			this->calcTextbox->ReadOnly = true;
 			this->calcTextbox->Size = System::Drawing::Size(295, 50);
 			this->calcTextbox->TabIndex = 0;
 			this->calcTextbox->TextChanged += gcnew System::EventHandler(this, &CalcForm::calcTextbox_TextChanged);
@@ -622,6 +623,7 @@ namespace cpluspluscalculatorct4021 {
 	{
 		//Further reading for keypress eventhandler https://msdn.microsoft.com/en-us/library/system.windows.forms.keypresseventhandler(v=vs.110).aspx
 		//Checking user input is valid
+		//Use text->Length - 1 to remove last character
 	}
 };
 

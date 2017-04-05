@@ -38,23 +38,6 @@ namespace cpluspluscalculatorct4021 {
 			}
 		}
 
-		bool checkTypedInput()
-		{
-			char finalInputChar = this->calcTextbox->Text[this->calcTextbox->Text->LastIndexOf];
-			if (isdigit(int(finalInputChar)))
-			{
-				return true;
-			}
-			else if (finalInputChar == '+' || finalInputChar == '-' || finalInputChar == '*' || finalInputChar == '/')
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
 		void disableNumButtons()
 		{
 			this->ins0Button->Enabled = false;
@@ -110,6 +93,27 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = true;
 			this->insMultiplyButton->Enabled = true;
 			this->insDivideButton->Enabled = true;
+		}
+
+		void disableAllButtons()
+		{
+			this->ins0Button->Enabled = false;
+			this->ins1Button->Enabled = false;
+			this->ins2Button->Enabled = false;
+			this->ins3Button->Enabled = false;
+			this->ins4Button->Enabled = false;
+			this->ins5Button->Enabled = false;
+			this->ins6Button->Enabled = false;
+			this->ins7Button->Enabled = false;
+			this->ins8Button->Enabled = false;
+			this->ins9Button->Enabled = false;
+
+			this->insPlusButton->Enabled = false;
+			this->insMinusButton->Enabled = false;
+			this->insMultiplyButton->Enabled = false;
+			this->insDivideButton->Enabled = false;
+
+			this->backspaceButton->Enabled = false;
 		}
 
 	protected:
@@ -188,7 +192,6 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->ReadOnly = true;
 			this->calcTextbox->Size = System::Drawing::Size(295, 50);
 			this->calcTextbox->TabIndex = 0;
-			this->calcTextbox->TextChanged += gcnew System::EventHandler(this, &CalcForm::calcTextbox_TextChanged);
 			// 
 			// ins1Button
 			// 
@@ -584,17 +587,23 @@ namespace cpluspluscalculatorct4021 {
 		else
 		{}
 	}
+
 	private: System::Void clearButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		this->calcTextbox->Text = "";
+		this->backspaceButton->Enabled = true;
 		this->enableAllButtons();
+		this->disableSymbolButtons();
 	}
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		if (this->calcTextbox->Text != "")
 		{
+			MessageBox::Show("Passed if check");
+			this->calcTextbox->ReadOnly = false;
 			this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
+			this->calcTextbox->ReadOnly = true;
 		}
 		else
 		{}
@@ -607,23 +616,28 @@ namespace cpluspluscalculatorct4021 {
 		{
 			MessageBox::Show("The calculation input must end with a number, not an operator.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
+		else
+		{
+			//Instantiating calculator logic class
+			calculator calc;
 
-		//Instantiating calculator logic class
-		calculator calc;
-		//Converting system string to std::string
-		calc.inputCalculation = msclr::interop::marshal_as<std::string>(this->calcTextbox->Text);
-		calc.calculationStack = calc.convertToPostfix();
-		std::string result = calc.calculate();
-		//Converting std::string back to system string and displaying result
-		String^ sysResult = gcnew String(result.c_str());
-		this->calcTextbox->Text = sysResult;
-	}
+			//Converting system string to std::string
+			calc.inputCalculation = msclr::interop::marshal_as<std::string>(this->calcTextbox->Text);
+			calc.calculationStack = calc.convertToPostfix();
+			std::string result = calc.calculate();
 
-	private: System::Void calcTextbox_TextChanged(System::Object^  sender, System::EventArgs^  e)
-	{
-		//Further reading for keypress eventhandler https://msdn.microsoft.com/en-us/library/system.windows.forms.keypresseventhandler(v=vs.110).aspx
-		//Checking user input is valid
-		//Use text->Length - 1 to remove last character
+			//Converting std::string back to system string and displaying result
+			String^ sysResult = gcnew String(result.c_str());
+			this->calcTextbox->Text = sysResult;
+
+			//Disable further calculations if result is more than 1 digit
+			if (this->calcTextbox->Text->Length > 1)
+			{
+				this->disableSymbolButtons();
+			}
+			else
+			{}
+		}
 	}
 };
 

@@ -28,7 +28,7 @@ namespace cpluspluscalculatorct4021 {
 
 		bool checkTextLength()
 		{
-			if(this->calcTextbox->Text->Length < 16)
+			if(this->calcTextbox->Text->Length < 17)
 			{
 				return true;
 			} 
@@ -74,6 +74,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = false;
 			this->insMultiplyButton->Enabled = false;
 			this->insDivideButton->Enabled = false;
+
+			this->equalsButton->Enabled = true;
 		}
 
 		void enableAllButtons()
@@ -420,6 +422,7 @@ namespace cpluspluscalculatorct4021 {
 			this->Controls->Add(this->ins2Button);
 			this->Controls->Add(this->ins1Button);
 			this->Controls->Add(this->calcTextbox);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"CalcForm";
 			this->Text = L"C++ Calculator";
@@ -431,7 +434,9 @@ namespace cpluspluscalculatorct4021 {
 #pragma endregion
 	private: System::Void CalcForm_Load(System::Object^  sender, System::EventArgs^  e)
 	{
-
+		//On form load, disable symbol buttons and backspace button
+		this->disableSymbolButtons();
+		this->backspaceButton->Enabled = false;
 	}
 
 	private: System::Void Ins1Button_Click(System::Object^  sender, System::EventArgs^  e)
@@ -590,20 +595,37 @@ namespace cpluspluscalculatorct4021 {
 
 	private: System::Void clearButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+		//Clear text in textbox, and enable/disable form controls appropriately
 		this->calcTextbox->Text = "";
-		this->backspaceButton->Enabled = true;
 		this->enableAllButtons();
 		this->disableSymbolButtons();
+		this->backspaceButton->Enabled = false;
+		this->equalsButton->Enabled = true;
 	}
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+		//Delete last character in textbox
 		if (this->calcTextbox->Text != "")
 		{
-			MessageBox::Show("Passed if check");
-			this->calcTextbox->ReadOnly = false;
-			this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
-			this->calcTextbox->ReadOnly = true;
+			//Get substring of textbox with last character removed, and assign the substring to text property of textbox
+			System::String^ s = this->calcTextbox->Text->Substring(0, this->calcTextbox->Text->Length - 1);
+			this->calcTextbox->Text = s;
+
+			//Check if input can be calculated, and enable/disable form controls appropriately
+			if (this->calcTextbox->Text->EndsWith("+") || this->calcTextbox->Text->EndsWith("-") || this->calcTextbox->Text->EndsWith("/") || this->calcTextbox->Text->EndsWith("*"))
+			{
+				this->enableAllButtons();
+				this->disableSymbolButtons();
+				this->equalsButton->Enabled = false;
+			}
+			else
+			{
+				this->enableAllButtons();
+				this->disableNumButtons();
+				this->equalsButton->Enabled = true;
+
+			}
 		}
 		else
 		{}
@@ -637,6 +659,11 @@ namespace cpluspluscalculatorct4021 {
 			}
 			else
 			{}
+
+			//Disable all buttons except 'clear'
+			this->backspaceButton->Enabled = false;
+			this->disableAllButtons();
+			this->equalsButton->Enabled = false;
 		}
 	}
 };

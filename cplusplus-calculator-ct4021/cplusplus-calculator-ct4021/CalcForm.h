@@ -55,6 +55,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = true;
 			this->insMultiplyButton->Enabled = true;
 			this->insDivideButton->Enabled = true;
+
+			this->backspaceButton->Enabled = true;
 		}
 
 		void disableSymbolButtons()
@@ -76,6 +78,7 @@ namespace cpluspluscalculatorct4021 {
 			this->insDivideButton->Enabled = false;
 
 			this->equalsButton->Enabled = true;
+			this->backspaceButton->Enabled = true;
 		}
 
 		void enableAllButtons()
@@ -95,6 +98,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = true;
 			this->insMultiplyButton->Enabled = true;
 			this->insDivideButton->Enabled = true;
+
+			this->backspaceButton->Enabled = true;
 		}
 
 		void disableAllButtons()
@@ -194,6 +199,7 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->ReadOnly = true;
 			this->calcTextbox->Size = System::Drawing::Size(295, 50);
 			this->calcTextbox->TabIndex = 0;
+			this->calcTextbox->TextChanged += gcnew System::EventHandler(this, &CalcForm::calcTextbox_TextChanged);
 			// 
 			// ins1Button
 			// 
@@ -437,6 +443,7 @@ namespace cpluspluscalculatorct4021 {
 		//On form load, disable symbol buttons and backspace button
 		this->disableSymbolButtons();
 		this->backspaceButton->Enabled = false;
+		this->equalsButton->Enabled = false;
 	}
 
 	private: System::Void Ins1Button_Click(System::Object^  sender, System::EventArgs^  e)
@@ -600,7 +607,7 @@ namespace cpluspluscalculatorct4021 {
 		this->enableAllButtons();
 		this->disableSymbolButtons();
 		this->backspaceButton->Enabled = false;
-		this->equalsButton->Enabled = true;
+		this->equalsButton->Enabled = false;
 	}
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
@@ -626,6 +633,17 @@ namespace cpluspluscalculatorct4021 {
 				this->equalsButton->Enabled = true;
 
 			}
+
+			//Disable backspace & equals if textbox is empty
+			if (this->calcTextbox->Text->Length == 0)
+			{
+				this->enableAllButtons();
+				this->disableSymbolButtons();
+				this->equalsButton->Enabled = false;
+				this->backspaceButton->Enabled = false;
+			}
+			else
+			{}
 		}
 		else
 		{}
@@ -666,6 +684,10 @@ namespace cpluspluscalculatorct4021 {
 			this->equalsButton->Enabled = false;
 		}
 	}
+
+private: System::Void calcTextbox_TextChanged(System::Object^  sender, System::EventArgs^  e)
+{
+}
 };
 
 }

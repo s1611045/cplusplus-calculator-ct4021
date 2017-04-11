@@ -123,6 +123,8 @@ namespace cpluspluscalculatorct4021 {
 			this->backspaceButton->Enabled = false;
 		}
 
+		bool formExpanded = false;
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -152,6 +154,19 @@ namespace cpluspluscalculatorct4021 {
 	private: System::Windows::Forms::Button^  ins8Button;
 	private: System::Windows::Forms::Button^  backspaceButton;
 	private: System::Windows::Forms::Button^  clearButton;
+private: System::Windows::Forms::Button^  expandCollapseButton;
+private: System::Windows::Forms::Button^  insPowerButton;
+private: System::Windows::Forms::Button^  insRootButton;
+private: System::Windows::Forms::Button^  storeMemoryButton;
+private: System::Windows::Forms::Button^  insMemoryButton;
+private: System::Windows::Forms::Button^  clearMemoryButton;
+
+
+
+
+
+
+
 	private: System::ComponentModel::IContainer^  components;
 	protected:
 	private:
@@ -185,6 +200,12 @@ namespace cpluspluscalculatorct4021 {
 			this->insDivideButton = (gcnew System::Windows::Forms::Button());
 			this->backspaceButton = (gcnew System::Windows::Forms::Button());
 			this->clearButton = (gcnew System::Windows::Forms::Button());
+			this->expandCollapseButton = (gcnew System::Windows::Forms::Button());
+			this->insPowerButton = (gcnew System::Windows::Forms::Button());
+			this->insRootButton = (gcnew System::Windows::Forms::Button());
+			this->storeMemoryButton = (gcnew System::Windows::Forms::Button());
+			this->insMemoryButton = (gcnew System::Windows::Forms::Button());
+			this->clearMemoryButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// calcTextbox
@@ -192,7 +213,7 @@ namespace cpluspluscalculatorct4021 {
 			this->calcTextbox->CharacterCasing = System::Windows::Forms::CharacterCasing::Upper;
 			this->calcTextbox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->calcTextbox->Location = System::Drawing::Point(12, 12);
+			this->calcTextbox->Location = System::Drawing::Point(17, 12);
 			this->calcTextbox->MaxLength = 16;
 			this->calcTextbox->Multiline = true;
 			this->calcTextbox->Name = L"calcTextbox";
@@ -205,7 +226,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins1Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins1Button->Location = System::Drawing::Point(12, 78);
+			this->ins1Button->Location = System::Drawing::Point(17, 78);
 			this->ins1Button->Name = L"ins1Button";
 			this->ins1Button->Size = System::Drawing::Size(50, 50);
 			this->ins1Button->TabIndex = 1;
@@ -217,7 +238,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins2Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins2Button->Location = System::Drawing::Point(68, 78);
+			this->ins2Button->Location = System::Drawing::Point(73, 78);
 			this->ins2Button->Name = L"ins2Button";
 			this->ins2Button->Size = System::Drawing::Size(50, 50);
 			this->ins2Button->TabIndex = 2;
@@ -229,7 +250,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins3Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins3Button->Location = System::Drawing::Point(124, 78);
+			this->ins3Button->Location = System::Drawing::Point(129, 78);
 			this->ins3Button->Name = L"ins3Button";
 			this->ins3Button->Size = System::Drawing::Size(50, 50);
 			this->ins3Button->TabIndex = 3;
@@ -241,7 +262,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins6Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins6Button->Location = System::Drawing::Point(124, 134);
+			this->ins6Button->Location = System::Drawing::Point(129, 134);
 			this->ins6Button->Name = L"ins6Button";
 			this->ins6Button->Size = System::Drawing::Size(50, 50);
 			this->ins6Button->TabIndex = 6;
@@ -253,7 +274,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins5Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins5Button->Location = System::Drawing::Point(68, 134);
+			this->ins5Button->Location = System::Drawing::Point(73, 134);
 			this->ins5Button->Name = L"ins5Button";
 			this->ins5Button->Size = System::Drawing::Size(50, 50);
 			this->ins5Button->TabIndex = 5;
@@ -265,7 +286,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins4Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins4Button->Location = System::Drawing::Point(12, 134);
+			this->ins4Button->Location = System::Drawing::Point(17, 134);
 			this->ins4Button->Name = L"ins4Button";
 			this->ins4Button->Size = System::Drawing::Size(50, 50);
 			this->ins4Button->TabIndex = 4;
@@ -277,7 +298,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins9Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins9Button->Location = System::Drawing::Point(124, 190);
+			this->ins9Button->Location = System::Drawing::Point(129, 190);
 			this->ins9Button->Name = L"ins9Button";
 			this->ins9Button->Size = System::Drawing::Size(50, 50);
 			this->ins9Button->TabIndex = 9;
@@ -289,7 +310,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins8Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins8Button->Location = System::Drawing::Point(68, 190);
+			this->ins8Button->Location = System::Drawing::Point(73, 190);
 			this->ins8Button->Name = L"ins8Button";
 			this->ins8Button->Size = System::Drawing::Size(50, 50);
 			this->ins8Button->TabIndex = 8;
@@ -301,7 +322,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins7Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins7Button->Location = System::Drawing::Point(12, 190);
+			this->ins7Button->Location = System::Drawing::Point(17, 190);
 			this->ins7Button->Name = L"ins7Button";
 			this->ins7Button->Size = System::Drawing::Size(50, 50);
 			this->ins7Button->TabIndex = 7;
@@ -313,7 +334,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->equalsButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->equalsButton->Location = System::Drawing::Point(68, 246);
+			this->equalsButton->Location = System::Drawing::Point(73, 246);
 			this->equalsButton->Name = L"equalsButton";
 			this->equalsButton->Size = System::Drawing::Size(106, 50);
 			this->equalsButton->TabIndex = 10;
@@ -325,7 +346,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->ins0Button->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ins0Button->Location = System::Drawing::Point(12, 246);
+			this->ins0Button->Location = System::Drawing::Point(17, 246);
 			this->ins0Button->Name = L"ins0Button";
 			this->ins0Button->Size = System::Drawing::Size(50, 50);
 			this->ins0Button->TabIndex = 11;
@@ -337,7 +358,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insPlusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insPlusButton->Location = System::Drawing::Point(195, 78);
+			this->insPlusButton->Location = System::Drawing::Point(200, 78);
 			this->insPlusButton->Name = L"insPlusButton";
 			this->insPlusButton->Size = System::Drawing::Size(56, 50);
 			this->insPlusButton->TabIndex = 12;
@@ -349,7 +370,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMinusButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMinusButton->Location = System::Drawing::Point(195, 134);
+			this->insMinusButton->Location = System::Drawing::Point(200, 134);
 			this->insMinusButton->Name = L"insMinusButton";
 			this->insMinusButton->Size = System::Drawing::Size(56, 50);
 			this->insMinusButton->TabIndex = 13;
@@ -361,7 +382,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insMultiplyButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insMultiplyButton->Location = System::Drawing::Point(195, 190);
+			this->insMultiplyButton->Location = System::Drawing::Point(200, 190);
 			this->insMultiplyButton->Name = L"insMultiplyButton";
 			this->insMultiplyButton->Size = System::Drawing::Size(56, 50);
 			this->insMultiplyButton->TabIndex = 14;
@@ -373,7 +394,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->insDivideButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->insDivideButton->Location = System::Drawing::Point(195, 246);
+			this->insDivideButton->Location = System::Drawing::Point(200, 246);
 			this->insDivideButton->Name = L"insDivideButton";
 			this->insDivideButton->Size = System::Drawing::Size(56, 50);
 			this->insDivideButton->TabIndex = 15;
@@ -385,7 +406,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->backspaceButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->backspaceButton->Location = System::Drawing::Point(257, 190);
+			this->backspaceButton->Location = System::Drawing::Point(262, 190);
 			this->backspaceButton->Name = L"backspaceButton";
 			this->backspaceButton->Size = System::Drawing::Size(50, 106);
 			this->backspaceButton->TabIndex = 16;
@@ -397,7 +418,7 @@ namespace cpluspluscalculatorct4021 {
 			// 
 			this->clearButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->clearButton->Location = System::Drawing::Point(257, 78);
+			this->clearButton->Location = System::Drawing::Point(262, 78);
 			this->clearButton->Name = L"clearButton";
 			this->clearButton->Size = System::Drawing::Size(50, 106);
 			this->clearButton->TabIndex = 17;
@@ -405,11 +426,79 @@ namespace cpluspluscalculatorct4021 {
 			this->clearButton->UseVisualStyleBackColor = true;
 			this->clearButton->Click += gcnew System::EventHandler(this, &CalcForm::clearButton_Click);
 			// 
+			// expandCollapseButton
+			// 
+			this->expandCollapseButton->Location = System::Drawing::Point(17, 302);
+			this->expandCollapseButton->Name = L"expandCollapseButton";
+			this->expandCollapseButton->Size = System::Drawing::Size(295, 23);
+			this->expandCollapseButton->TabIndex = 18;
+			this->expandCollapseButton->Text = L"Expand";
+			this->expandCollapseButton->UseVisualStyleBackColor = true;
+			this->expandCollapseButton->Click += gcnew System::EventHandler(this, &CalcForm::expandCollapseButton_Click);
+			// 
+			// insPowerButton
+			// 
+			this->insPowerButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold));
+			this->insPowerButton->Location = System::Drawing::Point(17, 331);
+			this->insPowerButton->Name = L"insPowerButton";
+			this->insPowerButton->Size = System::Drawing::Size(50, 37);
+			this->insPowerButton->TabIndex = 19;
+			this->insPowerButton->Text = L"^";
+			this->insPowerButton->UseVisualStyleBackColor = true;
+			this->insPowerButton->Click += gcnew System::EventHandler(this, &CalcForm::insPowerButton_Click);
+			// 
+			// insRootButton
+			// 
+			this->insRootButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold));
+			this->insRootButton->Location = System::Drawing::Point(73, 331);
+			this->insRootButton->Name = L"insRootButton";
+			this->insRootButton->Size = System::Drawing::Size(50, 37);
+			this->insRootButton->TabIndex = 20;
+			this->insRootButton->Text = L"√";
+			this->insRootButton->UseVisualStyleBackColor = true;
+			this->insRootButton->Click += gcnew System::EventHandler(this, &CalcForm::insRootButton_Click);
+			// 
+			// storeMemoryButton
+			// 
+			this->storeMemoryButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13, System::Drawing::FontStyle::Bold));
+			this->storeMemoryButton->Location = System::Drawing::Point(150, 331);
+			this->storeMemoryButton->Name = L"storeMemoryButton";
+			this->storeMemoryButton->Size = System::Drawing::Size(50, 37);
+			this->storeMemoryButton->TabIndex = 21;
+			this->storeMemoryButton->Text = L"M+";
+			this->storeMemoryButton->UseVisualStyleBackColor = true;
+			// 
+			// insMemoryButton
+			// 
+			this->insMemoryButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold));
+			this->insMemoryButton->Location = System::Drawing::Point(206, 331);
+			this->insMemoryButton->Name = L"insMemoryButton";
+			this->insMemoryButton->Size = System::Drawing::Size(50, 37);
+			this->insMemoryButton->TabIndex = 22;
+			this->insMemoryButton->Text = L"M";
+			this->insMemoryButton->UseVisualStyleBackColor = true;
+			// 
+			// clearMemoryButton
+			// 
+			this->clearMemoryButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Bold));
+			this->clearMemoryButton->Location = System::Drawing::Point(262, 331);
+			this->clearMemoryButton->Name = L"clearMemoryButton";
+			this->clearMemoryButton->Size = System::Drawing::Size(50, 37);
+			this->clearMemoryButton->TabIndex = 23;
+			this->clearMemoryButton->Text = L"MC";
+			this->clearMemoryButton->UseVisualStyleBackColor = true;
+			// 
 			// CalcForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(320, 308);
+			this->ClientSize = System::Drawing::Size(324, 376);
+			this->Controls->Add(this->clearMemoryButton);
+			this->Controls->Add(this->insMemoryButton);
+			this->Controls->Add(this->storeMemoryButton);
+			this->Controls->Add(this->insRootButton);
+			this->Controls->Add(this->insPowerButton);
+			this->Controls->Add(this->expandCollapseButton);
 			this->Controls->Add(this->clearButton);
 			this->Controls->Add(this->backspaceButton);
 			this->Controls->Add(this->insDivideButton);
@@ -444,6 +533,7 @@ namespace cpluspluscalculatorct4021 {
 		this->disableSymbolButtons();
 		this->backspaceButton->Enabled = false;
 		this->equalsButton->Enabled = false;
+		this->ClientSize = System::Drawing::Size(324, 330);
 	}
 
 	private: System::Void Ins1Button_Click(System::Object^  sender, System::EventArgs^  e)
@@ -684,10 +774,46 @@ namespace cpluspluscalculatorct4021 {
 			this->equalsButton->Enabled = false;
 		}
 	}
+	private: System::Void calcTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e)
+	{}
 
-private: System::Void calcTextbox_TextChanged(System::Object^  sender, System::EventArgs^  e)
-{
-}
+	private: System::Void insPowerButton_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (this->checkTextLength())
+		{
+			this->calcTextbox->Text = this->calcTextbox->Text + "^";
+			this->disableSymbolButtons();
+		}
+		else
+		{}
+	}
+
+	private: System::Void insRootButton_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (this->checkTextLength())
+		{
+			this->calcTextbox->Text = this->calcTextbox->Text + "√";
+			this->disableSymbolButtons();
+		}
+		else
+		{}
+	}
+
+	private: System::Void expandCollapseButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (!formExpanded)
+		{
+			this->ClientSize = System::Drawing::Size(324, 380);
+			this->expandCollapseButton->Text = "Collapse";
+			formExpanded = true;
+		}
+		else
+		{
+			this->ClientSize = System::Drawing::Size(324, 330);
+			this->expandCollapseButton->Text = "Expand";
+			formExpanded = false;
+		}
+	}
 };
 
 }

@@ -52,6 +52,13 @@ std::stack<std::string> calculator::convertToPostfix()
 				{
 					opStack.push(s);
 				}
+
+				//... if the operator is a power/exponent (and square root), push the character immediately to the operator stack (as it always has highest precedence)
+				else if (calculator::inputCalculation.at(i) == '^')
+				{
+					opStack.push(s);
+				}
+
 				//...and the operator has a LOWER BODMAS precedence than operator at top of the operator stack, push the character at the top of the operator
 				//stack to the postfix stack and pop the character at the top of the operator stack until the string character has a higher precedence than
 				//the character at the top of the operator stack
@@ -116,6 +123,18 @@ int calculator::divide(int a, int b)
 int calculator::multiply(int a, int b)
 {
 	int result = a * b;
+	return result;
+}
+
+int calculator::exponent(int a, int b)
+{
+	int result = pow(a, b);
+	return result;
+}
+
+int calculator::squareRoot(int a)
+{
+	int result = sqrt(a);
 	return result;
 }
 
@@ -214,6 +233,12 @@ std::string calculator::calculate()
 			tempStack.pop();
 			result = divide(b, a);
 			break;
+		case '^':
+			a = convertToInteger(tempStack.top());
+			tempStack.pop();
+			b = convertToInteger(tempStack.top());
+			tempStack.pop();
+			result = exponent(b, a);
 		}
 
 		//Convert result to string to be accepted into stack

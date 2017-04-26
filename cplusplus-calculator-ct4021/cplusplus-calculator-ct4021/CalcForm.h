@@ -55,6 +55,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = true;
 			this->insMultiplyButton->Enabled = true;
 			this->insDivideButton->Enabled = true;
+			this->insPowerButton->Enabled = true;
+			this->insRootButton->Enabled = false;
 
 			this->backspaceButton->Enabled = true;
 		}
@@ -76,6 +78,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = false;
 			this->insMultiplyButton->Enabled = false;
 			this->insDivideButton->Enabled = false;
+			this->insPowerButton->Enabled = false;
+			this->insRootButton->Enabled = false;
 
 			this->equalsButton->Enabled = true;
 			this->backspaceButton->Enabled = true;
@@ -98,6 +102,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = true;
 			this->insMultiplyButton->Enabled = true;
 			this->insDivideButton->Enabled = true;
+			this->insPowerButton->Enabled = true;
+			this->insRootButton->Enabled = false;
 
 			this->backspaceButton->Enabled = true;
 		}
@@ -119,8 +125,10 @@ namespace cpluspluscalculatorct4021 {
 			this->insMinusButton->Enabled = false;
 			this->insMultiplyButton->Enabled = false;
 			this->insDivideButton->Enabled = false;
+			this->insPowerButton->Enabled = false;
 
 			this->backspaceButton->Enabled = false;
+			this->insRootButton->Enabled = true;
 		}
 
 		bool formExpanded = false;
@@ -790,13 +798,20 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 
 	private: System::Void insRootButton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (this->checkTextLength())
-		{
-			this->calcTextbox->Text = this->calcTextbox->Text + "√";
-			this->disableSymbolButtons();
-		}
-		else
-		{}
+		//Instantiating calculator class
+		calculator calc;
+
+		//Convert text in textbox to integer
+		int input = int::Parse(this->calcTextbox->Text);
+
+		//Calculate square root
+		input = calc.squareRoot(input);
+
+		//Convert integer back to system string and display result
+		std::string stringResult = std::to_string(input);
+		String^ result = gcnew String(stringResult.c_str());
+		this->calcTextbox->Text = result;
+
 	}
 
 	private: System::Void expandCollapseButton_Click(System::Object^  sender, System::EventArgs^  e)

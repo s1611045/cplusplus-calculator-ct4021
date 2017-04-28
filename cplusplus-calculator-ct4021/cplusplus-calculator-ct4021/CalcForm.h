@@ -38,6 +38,9 @@ namespace cpluspluscalculatorct4021 {
 			}
 		}
 
+		//Declaring variable used for 'memory' functionality
+		System::String^ memory;
+
 		void disableNumButtons()
 		{
 			this->ins0Button->Enabled = false;
@@ -59,6 +62,8 @@ namespace cpluspluscalculatorct4021 {
 			this->insRootButton->Enabled = false;
 
 			this->backspaceButton->Enabled = true;
+
+			this->storeMemoryButton->Enabled = false;
 		}
 
 		void disableSymbolButtons()
@@ -83,6 +88,8 @@ namespace cpluspluscalculatorct4021 {
 
 			this->equalsButton->Enabled = true;
 			this->backspaceButton->Enabled = true;
+
+			this->storeMemoryButton->Enabled = true;
 		}
 
 		void enableAllButtons()
@@ -475,6 +482,7 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 			this->storeMemoryButton->TabIndex = 21;
 			this->storeMemoryButton->Text = L"M+";
 			this->storeMemoryButton->UseVisualStyleBackColor = true;
+			this->storeMemoryButton->Click += gcnew System::EventHandler(this, &CalcForm::storeMemoryButton_Click);
 			// 
 			// insMemoryButton
 			// 
@@ -485,6 +493,7 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 			this->insMemoryButton->TabIndex = 22;
 			this->insMemoryButton->Text = L"M";
 			this->insMemoryButton->UseVisualStyleBackColor = true;
+			this->insMemoryButton->Click += gcnew System::EventHandler(this, &CalcForm::insMemoryButton_Click);
 			// 
 			// clearMemoryButton
 			// 
@@ -495,6 +504,7 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 			this->clearMemoryButton->TabIndex = 23;
 			this->clearMemoryButton->Text = L"MC";
 			this->clearMemoryButton->UseVisualStyleBackColor = true;
+			this->clearMemoryButton->Click += gcnew System::EventHandler(this, &CalcForm::clearMemoryButton_Click);
 			// 
 			// CalcForm
 			// 
@@ -706,6 +716,19 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 		this->disableSymbolButtons();
 		this->backspaceButton->Enabled = false;
 		this->equalsButton->Enabled = false;
+		if (memory != "")
+		{
+			this->clearMemoryButton->Enabled = true;
+			this->storeMemoryButton->Enabled = false;
+			this->insMemoryButton->Enabled = true;
+		}
+		else
+		{
+			this->clearMemoryButton->Enabled = false;
+			this->storeMemoryButton->Enabled = false;
+			this->insMemoryButton->Enabled = false;
+		}
+		
 	}
 
 	private: System::Void backspaceButton_Click(System::Object^  sender, System::EventArgs^  e)
@@ -780,6 +803,7 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 			this->backspaceButton->Enabled = false;
 			this->disableAllButtons();
 			this->equalsButton->Enabled = false;
+			this->insMemoryButton->Enabled = false;
 		}
 	}
 	private: System::Void calcTextbox_TextChanged(System::Object^ sender, System::EventArgs^ e)
@@ -828,6 +852,24 @@ private: System::Windows::Forms::Button^  clearMemoryButton;
 			this->expandCollapseButton->Text = "Expand";
 			formExpanded = false;
 		}
+	}
+
+	private: System::Void insMemoryButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		this->calcTextbox->Text = this->calcTextbox->Text + memory;
+	}
+
+	private: System::Void clearMemoryButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		memory = "";
+		this->clearMemoryButton->Enabled = false;
+		
+	}
+
+	private: System::Void storeMemoryButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		memory = this->calcTextbox->Text;
+		this->clearMemoryButton->Enabled = true;
 	}
 };
 
